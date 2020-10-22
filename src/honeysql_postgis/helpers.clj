@@ -67,14 +67,14 @@
 
 ;; https://en.wikipedia.org/wiki/Join_(SQL)#Cross_join
 
-(defmethod honeysql.format/format-clause :cross-join [[_ join-groups] _]
-  (honeysql.format/space-join (map #(apply honeysql.format/format-join :cross %)
-                                   (partition 2 join-groups))))
+;; (defmethod honeysql.format/format-clause :cross-join [[_ join-groups] _]
+;;   (honeysql.format/space-join (map #(apply honeysql.format/format-join :cross %)
+;;                                    (partition 2 join-groups))))
 
-(defhelper cross-join [m args]
-  (assoc m :cross-join (first args)))
+;; (defhelper cross-join [m args]
+;;   (assoc m :cross-join (first args)))
 
-(honeysql.format/register-clause! :cross-join 152) ;; TODO: Danger Will Robinson!
+;; (honeysql.format/register-clause! :cross-join 152) ;; TODO: Danger Will Robinson!
 
 ;; HoneySQL array syntax: https://github.com/jkk/honeysql/issues/85
 

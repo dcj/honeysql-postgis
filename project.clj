@@ -10,7 +10,7 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
 
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [honeysql "0.9.10"]
+                 [honeysql "1.0.444"]
                  [nilenso/honeysql-postgres "0.2.6"]
                  ]
 
