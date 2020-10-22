@@ -1,4 +1,4 @@
-(defproject honeysql-postgis
+(defproject com.dcj/honeysql-postgis
 
   "0.1.0-SNAPSHOT"
 
