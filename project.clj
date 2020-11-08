@@ -14,4 +14,9 @@
                  [nilenso/honeysql-postgres "0.2.6"]
                  ]
 
+  :repositories {"snapshots"
+                 {:url "https://repo.deps.co/aircraft-noise/snapshots"
+                  :username :env/deps_key
+                  :password :env/deps_secret}}
+
   )
