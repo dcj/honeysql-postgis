@@ -1,0 +1,37 @@
+{:paths ["src" "resources"]
+
+ :mvn/repos {"acn-snapshots" {:url "https://repo.deps.co/aircraft-noise/snapshots"}
+             "acn-releases"  {:url "https://repo.deps.co/aircraft-noise/releases"}}
+
+ :deps
+ {org.clojure/clojure {:mvn/version "1.10.3"}
+  honeysql            {:mvn/version "1.0.461"}
+  }
+
+ :aliases
+ {:mvn/artifact-id honeysql-postgis
+  :mvn/group-id    com.dcj
+  :mvn/version     "0.1.1-SNAPSHOT"
+  :jar/filename    "honeysql-postgis.jar"
+
+  :jar {:replace-deps
+        {com.github.seancorfield/depstar ; 2.0.next:
+         {:git/url "https://github.com/seancorfield/depstar"
+          :sha "5f4df9ffece4769d01559f7914bd88de024e1348"}}
+        :exec-fn hf.depstar/jar
+        :exec-args {:jar         :jar/filename
+                    :artifact-id :mvn/artifact-id
+                    :group-id    :mvn/group-id
+                    :version     :mvn/version
+                    :sync-pom    true}}
+
+  :deploy {:extra-deps {com.dcj/deps-deploy
+                        {:git/url "https://github.com/dcj/deps-deploy.git"
+                         :sha "978cfc94ea888a2a8c336855c0a98fb94e65b8ad"}}
+           :exec-fn deps-deploy.deps-deploy/deploy
+           :exec-args {:installer :remote
+                       :sign-releases? false
+                       :artifact :jar/filename
+                       :repository "acn-snapshots"}}}
+
+ }
