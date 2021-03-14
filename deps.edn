@@ -4,14 +4,12 @@
              "acn-releases"  {:url "https://repo.deps.co/aircraft-noise/releases"}}
 
  :deps
- {org.clojure/clojure {:mvn/version "1.10.3"}
-  honeysql/honeysql {:mvn/version "1.0.461"}
-  }
+ {org.clojure/clojure {:mvn/version "1.10.3"}}
 
  :aliases
  {:mvn/artifact-id honeysql-postgis
   :mvn/group-id    com.dcj
-  :mvn/version     "0.1.1-SNAPSHOT"
+  :mvn/version     "0.3.0-SNAPSHOT"
   :jar/filename    "honeysql-postgis.jar"
 
   :jar {:replace-deps

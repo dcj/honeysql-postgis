@@ -1,68 +1,64 @@
-(ns honeysql-postgis.helpers
-  (:require [honeysql.core :as sql]
-            [honeysql.helpers :refer :all :as helpers]
-            [honeysql.format])
-  (:refer-clojure :exclude [update]))
+(ns honeysql-postgis.helpers)
 
 
 (defn ST_MakePoint
   [x y z]
-  (sql/call :ST_MakePoint x y z))
+  [:ST_MakePoint x y z])
 
 
 (defn ST_Transform
   [g srid]
-  (sql/call :ST_Transform g (sql/call :cast srid :integer)))
+  [:ST_Transform g [:cast srid :integer]])
 
 
 (defn ST_SetSRID
   [g srid]
-  (sql/call :ST_SetSRID g (sql/call :cast srid :integer)))
+  [:ST_SetSRID g [:cast srid :integer]])
 
 
 (defn ST_3DDistance
   [g1 g2]
-  (sql/call :ST_3DDistance g1 g2))
+  [:ST_3DDistance g1 g2])
 
 
 (defn ST_AsText
   [g]
-  (sql/call :ST_AsText g))
+  [:ST_AsText g])
 
 
 (defn ST_3DClosestPoint
   [g1 g2]
-  (sql/call :ST_3DClosestPoint g1 g2))
+  [:ST_3DClosestPoint g1 g2])
 
 
 (defn ST_X
   [g]
-  (sql/call :ST_X g))
+  [:ST_X g])
 
 
 (defn ST_Y
   [g]
-  (sql/call :ST_Y g))
+  [:ST_Y g])
 
 
 (defn ST_Z
   [g]
-  (sql/call :ST_Z g))
+  [:ST_Z g])
 
 
 (defn ST_M
   [g]
-  (sql/call :ST_M g))
+  [:ST_M g])
 
 
 (defn ST_DumpPoints
   [g]
-  (sql/call :ST_DumpPoints g))
+  [:ST_DumpPoints g])
 
 
 (defn ST_MakeLine
   [g1 g2]
-  (sql/call :ST_MakeLine g1 g2))
+  [:ST_MakeLine g1 g2])
 
 
 ;; https://en.wikipedia.org/wiki/Join_(SQL)#Cross_join
