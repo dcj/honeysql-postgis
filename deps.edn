@@ -5,7 +5,7 @@
 
  :deps
  {org.clojure/clojure {:mvn/version "1.10.3"}
-  honeysql            {:mvn/version "1.0.461"}
+  honeysql/honeysql {:mvn/version "1.0.461"}
   }
 
  :aliases
