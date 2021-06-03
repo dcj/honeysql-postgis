@@ -13,9 +13,7 @@
   :jar/filename    "honeysql-postgis.jar"
 
   :jar {:replace-deps
-        {com.github.seancorfield/depstar ; 2.0.next:
-         {:git/url "https://github.com/seancorfield/depstar"
-          :sha "5f4df9ffece4769d01559f7914bd88de024e1348"}}
+        {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
         :exec-fn hf.depstar/jar
         :exec-args {:jar         :jar/filename
                     :artifact-id :mvn/artifact-id
@@ -23,9 +21,7 @@
                     :version     :mvn/version
                     :sync-pom    true}}
 
-  :deploy {:extra-deps {com.dcj/deps-deploy
-                        {:git/url "https://github.com/dcj/deps-deploy.git"
-                         :sha "978cfc94ea888a2a8c336855c0a98fb94e65b8ad"}}
+  :deploy {:extra-deps {com.dcj/deps-deploy {:mvn/version "2.0.999-SNAPSHOT"}}
            :exec-fn deps-deploy.deps-deploy/deploy
            :exec-args {:installer :remote
                        :sign-releases? false
